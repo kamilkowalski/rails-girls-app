@@ -1,5 +1,5 @@
-<h2>Adding a diary entry</h2>
-<%= form_for(Entry.new) do |form| %>
+<h2>Editing a diary entry</h2>
+<%= form_for(@entry) do |form| %>
   <div class="form-group">
     <%= form.label("title") %>
     <%= form.text_field("title", class: "form-control", placeholder: "Enter your title...") %>
@@ -12,4 +12,5 @@
   
   <%= form.submit(class: "btn btn-primary") %>
 <% end %>
+<p><%= link_to("Back to this entry", entry_path(@entry), class: "btn btn-default") %></p>
 <p><%= link_to("Back to all entries", entries_path, class: "btn btn-default") %></p>

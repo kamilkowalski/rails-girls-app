@@ -1,8 +1,13 @@
-<%= link_to("New entry", new_entry_path) %>
-<div>
+<%= link_to("New entry", new_entry_path, class: "btn btn-primary") %>
+
 <% for entry in @entries %>
-    <h2><%= link_to(entry.title, entry_path(entry)) %></h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= link_to(entry.title, entry_path(entry)) %></h3>
+  </div>
+  <div class="panel-body">
     <p><%= entry.date %></p>
     <p><%= entry.contents %></p>
-<% end %>
+  </div>
 </div>
+<% end %>
