@@ -1,16 +1,4 @@
 <h2>Editing a diary entry</h2>
-<%= form_for(@entry) do |form| %>
-  <div class="form-group">
-    <%= form.label("title") %>
-    <%= form.text_field("title", class: "form-control", placeholder: "Enter your title...") %>
-  </div>
-  
-  <div class="form-group">
-    <%= form.label("contents") %>
-    <%= form.text_area("contents", class: "form-control", placeholder: "Enter your content...") %>
-  </div>
-  
-  <%= form.submit(class: "btn btn-primary") %>
-<% end %>
+<%= render partial: "form", locals: { entry: @entry } %>
 <p><%= link_to("Back to this entry", entry_path(@entry), class: "btn btn-default") %></p>
 <p><%= link_to("Back to all entries", entries_path, class: "btn btn-default") %></p>
